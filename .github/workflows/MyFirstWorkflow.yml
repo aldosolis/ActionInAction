@@ -11,10 +11,16 @@ jobs:
 
     steps: 
       - run: echo "👋 Hello World!"
+      
       - name: Checkout
         uses: actions/checkout@v4.2.1
+        
       - name: List files in the repository
         run: |
           echo "The repository ${{ github.repository }} contains the following lines:"
           tree
+
+      - name: Test shell config
+        run: print %ENV
+        shell: perl {0}
       
